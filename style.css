@@ -19,14 +19,24 @@ body {
 }
 
 /* プロフィール画像（円形） */
-.profile-img {
-    width: 120px;
-    height: 120px;
-    background: #333; /* ここに画像のURLを後で入れる */
-    border-radius: 50%;
+
+.profile-container {
+    width: 150px;  /* 丸の大きさ */
+    height: 150px;
     margin: 0 auto 20px;
-    border: 3px solid #ff00c1; /* 色収差をイメージしたピンク */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff00c1;
     box-shadow: 0 0 15px rgba(255, 0, 193, 0.5);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    /* 比率を保ったまま枠に合わせる */
+    object-fit: cover; 
+    /* 顔が上の方にあるので、表示位置を「上」に固定する */
+    object-position: center 10%; 
 }
 
 /* グリッチエフェクト（色収差風） */

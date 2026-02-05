@@ -1,0 +1,68 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a; /* 真っ黒すぎない高級感のある黒 */
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px; /* スマホで見やすい幅 */
+    text-align: center;
+    padding: 20px;
+}
+
+/* プロフィール画像（円形） */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    background: #333; /* ここに画像のURLを後で入れる */
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 3px solid #ff00c1; /* 色収差をイメージしたピンク */
+    box-shadow: 0 0 15px rgba(255, 0, 193, 0.5);
+}
+
+/* グリッチエフェクト（色収差風） */
+.glitch {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+}
+
+/* ボタンのデザイン */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 249, 0.3);
+}
+
+/* スマホ向けの調整 */
+@media (max-width: 480px) {
+    .glitch { font-size: 1.5rem; }
+}

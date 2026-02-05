@@ -1,58 +1,98 @@
-/* 基本設定 */
 body {
     margin: 0;
     padding: 0;
-    background-color: #0a0a0a; /* 真っ黒すぎない高級感のある黒 */
-    color: #ffffff;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #0a0a0b;
+    color: #e0e0e0;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
 
 .container {
     width: 90%;
-    max-width: 400px; /* スマホで見やすい幅 */
+    max-width: 450px;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
+    flex: 1;
 }
 
-/* プロフィール画像（円形） */
-
+/* アイコン設定 */
 .profile-container {
-    width: 150px;  /* 丸の大きさ */
+    width: 150px;
     height: 150px;
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid #ff00c1;
-    box-shadow: 0 0 15px rgba(255, 0, 193, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 193, 0.4);
 }
 
 .profile-img {
     width: 100%;
     height: 100%;
-    /* 比率を保ったまま枠に合わせる */
-    object-fit: cover; 
-    /* 顔が上の方にあるので、表示位置を「上」に固定する */
-    object-position: center 10%; 
+    object-fit: cover;
+    object-position: center 15%; /* 顔の位置を微調整 */
 }
 
-/* グリッチエフェクト（色収差風） */
+/* テキスト装飾 */
 .glitch {
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
     text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+    margin-bottom: 5px;
 }
 
-/* ボタンのデザイン */
+.subtitle {
+    font-size: 0.85rem;
+    color: #00fff9;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* 実績欄 */
+.works {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #00fff9;
+    padding: 12px 20px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.works-title {
+    margin: 0 0 8px 0;
+    color: #ff00c1;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.works-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.works-list li::before {
+    content: "▹";
+    margin-right: 8px;
+    color: #00fff9;
+}
+
+.skill-text {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 20px;
+}
+
+/* ボタン */
 .links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     margin-top: 30px;
 }
 
@@ -60,19 +100,30 @@ body {
     text-decoration: none;
     color: white;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
-    transition: transform 0.2s, box-shadow 0.2s;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 249, 0.3);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* スマホ向けの調整 */
-@media (max-width: 480px) {
-    .glitch { font-size: 1.5rem; }
+.youtube:hover { border-color: #ff0000; }
+.twitter:hover { border-color: #1da1f2; }
+.github:hover { border-color: #f0f6fc; }
+.email:hover { border-color: #fbbc05; }
+
+/* フッター */
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
 }
